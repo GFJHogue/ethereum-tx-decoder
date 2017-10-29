@@ -1,6 +1,6 @@
 {
   "name": "ethereum-tx-decoder",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Takes raw transactions and fully decodes them!",
   "keywords": [
     "ethereum",
@@ -20,6 +20,14 @@
     "raw",
     "tx"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GFJHogue/ethereum-tx-decoder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GFJHogue/ethereum-tx-decoder/issues"
+  },
+  "homepage": "https://github.com/GFJHogue/ethereum-tx-decoder#readme",
   "main": "index.js",
   "scripts": {
     "test": "echo 'No tests yet.'"
