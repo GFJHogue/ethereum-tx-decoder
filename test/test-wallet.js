@@ -5,11 +5,11 @@ var utils = require('./utils');
 
 describe('Test Transaction Parsing', function() {
     var decodeTx = require('../src/decodeTransaction.js');
-    var Wallet = require('../wallet/wallet');
+    var Wallet = require('ethers-wallet/wallet');
 
-    var bigNumber = require('../utils/bignumber.js');
-    var convert = require('../utils/convert.js');
-    var getAddress = require('../utils/address.js').getAddress;
+    var bigNumber = require('ethers-utils/bignumber.js');
+    var convert = require('ethers-utils/convert.js');
+    var getAddress = require('ethers-utils/address.js').getAddress;
 
     var tests = utils.loadTests('transactions');
     tests.forEach(function(test) {
