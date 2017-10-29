@@ -57,7 +57,7 @@ Fully decode function parameters from raw transactions!
 #### Then:
 
 ```js
-  fnDecoder.decodeFn(decoded_tx.data);
+  fnDecoder.decodeFn(decodedTx.data);
   //  Result {
   //    ...All function parameters indexed by both name and position...
   //  }
