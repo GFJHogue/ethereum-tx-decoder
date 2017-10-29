@@ -2,6 +2,24 @@
   "name": "ethereum-tx-decoder",
   "version": "0.0.0",
   "description": "Takes raw transactions and fully decodes them!",
+  "keywords": [
+    "ethereum",
+    "transaction",
+    "smart",
+    "contract",
+    "abi",
+    "decoder",
+    "decode",
+    "RLP",
+    "parse",
+    "parser",
+    "ethers",
+    "ethers.js",
+    "ether",
+    "eth",
+    "raw",
+    "tx"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo 'No tests yet.'"

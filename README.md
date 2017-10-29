@@ -1,6 +1,9 @@
 ##### CAUTION: This package is untested (for now)!
 
 # ethereum-tx-decoder
+
+[![npm version](https://badge.fury.io/js/ethereum-tx-decoder.svg)](https://badge.fury.io/js/ethereum-tx-decoder)
+
 Fully decode function parameters from raw transactions!
 
 - A lightweight utility with minimal dependencies.
