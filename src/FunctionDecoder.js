@@ -1,4 +1,4 @@
-var {Interface} = require('ethers-contracts');
+var Interface = require('ethers-contracts/interface');
 var decodeTx = require('./decodeTransaction.js');
 
 module.exports = function FunctionDecoder(iface) {

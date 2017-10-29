@@ -1,4 +1,5 @@
-var {bigNumberify, RLP} = require('ethers-utils');
+var {bigNumberify} = require('ethers-utils/bignumber');
+var RLP = require('ethers-utils/rlp');
 
 module.exports = function decodeTx(raw_tx) {
   var decoded_tx = RLP.decode(raw_tx);
