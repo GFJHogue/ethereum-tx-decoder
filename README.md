@@ -1,8 +1,8 @@
-##### CAUTION: This package is untested (for now)!
+##### CAUTION: This package is not fully tested (for now)!
 
 # ethereum-tx-decoder
 
-[![npm version](https://badge.fury.io/js/ethereum-tx-decoder.svg)](https://badge.fury.io/js/ethereum-tx-decoder)
+[![npm version](https://badge.fury.io/js/ethereum-tx-decoder.svg)](https://badge.fury.io/js/ethereum-tx-decoder)[![Build Status](https://travis-ci.org/GFJHogue/ethereum-tx-decoder.svg?branch=master)](https://travis-ci.org/GFJHogue/ethereum-tx-decoder)
 
 Fully decode function parameters from raw transactions!
 
@@ -16,13 +16,14 @@ Fully decode function parameters from raw transactions!
 
 `npm i ethereum-tx-decoder`
 
-### Decode raw transactions into an Object:
+### `decodeTx()`
+
+Decode raw transactions into an Object.
 
 ```js
   var txDecoder = require('ethereum-tx-decoder');
 
   // transaction.raw = '0x...'
-
   var decodedTx = txDecoder.decodeTx(transaction.raw);
   //  {
   //    nonce:    Number
@@ -37,24 +38,27 @@ Fully decode function parameters from raw transactions!
   //  }
 ```
 
-### Decode function call data into the original parameter values:
+Need to know `from` or `chainId`? Use [`ethers.Wallet.parseTransaction()`](https://docs.ethers.io/ethers.js/html/api-wallet.html#parsing-transactions) instead.
 
-#### Using [`ethers.Contract`](https://github.com/ethers-io/ethers.js/):
+### `class FunctionDecoder`
+
+Decode function call data into the original parameter values.
+
+#### New instance with [`ethers.Contract`](https://github.com/ethers-io/ethers.js/):
 
 ```js
   // contract = new Contract(address, abi, provider)
-
   var fnDecoder = new txDecoder.FunctionDecoder(contract.interface);
 ```
 
-#### OR the contract's `abi`:
+#### New instance with contract `abi`:
 
 ```js
   // Internally creates an ethers.Interface object.
   var fnDecoder = new txDecoder.FunctionDecoder(abi);
 ```
 
-#### Then:
+#### `decodeFn()`
 
 ```js
   fnDecoder.decodeFn(decodedTx.data);
@@ -65,7 +69,9 @@ Fully decode function parameters from raw transactions!
 
 Note: `decodeFn()` returns an [`Arrayish`](https://docs.ethers.io/ethers.js/html/api-utils.html#api-arrayish).
 
-### Shortcut for decoding a function from transaction:
+### `decodeFnFromTx()`
+
+Shortcut for decoding a function from transaction.
 
 ```js
   fnDecoder.decodeFnFromTx(transaction.raw);

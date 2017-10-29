@@ -28,5 +28,7 @@ module.exports = function decodeTx(raw_tx) {
     s: raw_s
   }
 
+  if (transaction.to == '0x') delete transaction.to;
+
   return transaction;
 }
