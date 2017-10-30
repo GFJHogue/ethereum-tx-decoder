@@ -1,13 +1,19 @@
 {
   "name": "ethereum-tx-decoder",
-  "version": "0.0.1",
-  "description": "Takes raw transactions and fully decodes them!",
+  "version": "1.0.0",
+  "description": "Lightweight utility for decoding function parameters from Ethereum transactions.",
   "keywords": [
     "ethereum",
     "transaction",
     "smart",
     "contract",
     "abi",
+    "function",
+    "functions",
+    "parameters",
+    "params",
+    "event",
+    "events",
     "decoder",
     "decode",
     "RLP",
@@ -39,8 +45,6 @@
     "ethers-utils": "2.1.3"
   },
   "devDependencies": {
-    "ethereumjs-tx": "1.3.3",
-    "ethereumjs-util": "5.1.2",
     "ethers-wallet": "2.1.3",
     "mocha": "4.0.1"
   }

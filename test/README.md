@@ -4,11 +4,8 @@
 
 Test generation taken from `ethers.js`.
 
-## Status
-
-- So far only `decodeTx()` is tested (`decodeTransaction.js`).
+- `decodeTx()` is tested (`decodeTransaction.js`).
   * Using tests replicated from `ethers.Wallet` for `Wallet.parseTransaction()`
 
-## Backlog
-
-- `FunctionDecoder.js`
+- `FunctionDecoder` is tested (`FunctionDecoder.js`).
+  * Using tests derived from `ethers.Interface` for `Interface.decodeParams()`
