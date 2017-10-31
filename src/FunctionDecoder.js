@@ -25,11 +25,16 @@ module.exports = function FunctionDecoder(iface) {
     var fnName = functions[sighash];
     var fnInfo = iface.functions[fnName];
 
-    return Interface.decodeParams(
+    var result = Interface.decodeParams(
       fnInfo.inputs,
       fnInfo.inputTypes,
       raw_params
     );
+
+    result.signature = fnInfo.signature;
+    result.sighash = fnInfo.sighash;
+
+    return result;
   }
 
   this.decodeFnFromTx = function(raw_tx) {
