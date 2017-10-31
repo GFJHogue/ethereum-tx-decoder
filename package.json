@@ -1,6 +1,6 @@
 {
   "name": "ethereum-tx-decoder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight utility for decoding function parameters from Ethereum transactions.",
   "keywords": [
     "ethereum",
