@@ -4,11 +4,11 @@
 
 Lightweight utility for decoding function parameters from Ethereum transactions.
 
-- A lightweight utility with minimal dependencies.
+- Minimal dependencies.
 
 - Find the exact function parameters that triggered an event.
 
-- _[Built with ethers.js by ricmoo](https://github.com/ethers-io/ethers.js/)_, but externally agnostic.
+- _[Built with ethers.js by ricmoo](https://github.com/ethers-io/ethers.js/)_.
 
 ## Usage
 
