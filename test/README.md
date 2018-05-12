@@ -8,4 +8,4 @@ Test generation taken from `ethers.js`.
   * Using tests replicated from `ethers.Wallet` for `Wallet.parseTransaction()`
 
 - `FunctionDecoder` is tested (`FunctionDecoder.js`).
-  * Using tests derived from `ethers.Interface` for `Interface.decodeParams()`
+  * Using tests derived from `ethers.AbiCoder` for `AbiCoder.decode()`
