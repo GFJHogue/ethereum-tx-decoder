@@ -3,13 +3,18 @@
 var assert = require('assert');
 var utils = require('./utils');
 
+if (global.ethers) {
+  console.log('Using global ethers; ' + __filename);
+  var ethers = global.ethers;
+} else {
+  var ethers = require('ethers');
+}
+
 describe('Test Transaction Parsing', function() {
     var decodeTx = require('../src/decodeTransaction.js');
-    var Wallet = require('ethers-wallet/wallet');
+    var Wallet = ethers.Wallet;
 
-    var bigNumber = require('ethers-utils/bignumber.js');
-    var convert = require('ethers-utils/convert.js');
-    var getAddress = require('ethers-utils/address.js').getAddress;
+    var getAddress = ethers.utils.getAddress;
 
     var tests = utils.loadTests('transactions');
     tests.forEach(function(test) {

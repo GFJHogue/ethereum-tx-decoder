@@ -1,4 +1,5 @@
-var Interface = require('ethers-contracts/interface');
+var {defaultCoder} = require('ethers/utils/abi-coder');
+var Interface = require('ethers/contracts/interface');
 var decodeTx = require('./decodeTransaction.js');
 
 module.exports = function FunctionDecoder(iface) {
@@ -25,7 +26,7 @@ module.exports = function FunctionDecoder(iface) {
     var fnName = functions[sighash];
     var fnInfo = iface.functions[fnName];
 
-    var result = Interface.decodeParams(
+    var result = defaultCoder.decode(
       fnInfo.inputs,
       fnInfo.inputTypes,
       raw_params

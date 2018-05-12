@@ -5,10 +5,10 @@ var fs = require('fs');
 var path = require('path');
 var zlib = require('zlib');
 
-var bigNumber = require('ethers-utils/bignumber');
-var convert = require('ethers-utils/convert');
-var keccak256 = require('ethers-utils/keccak256');
-var utf8 = require('ethers-utils/utf8');
+var bigNumber = require('ethers/utils/bignumber');
+var convert = require('ethers/utils/convert');
+var keccak256 = require('ethers/utils/keccak256');
+var utf8 = require('ethers/utils/utf8');
 
 /*
 function random(lowerRandomInterval, upperOpenInterval) {
