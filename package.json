@@ -34,7 +34,7 @@
     "url": "https://github.com/GFJHogue/ethereum-tx-decoder/issues"
   },
   "homepage": "https://github.com/GFJHogue/ethereum-tx-decoder#readme",
-  "main": "index.js",
+  "main": "./src",
   "scripts": {
     "test": "mocha test/"
   },
