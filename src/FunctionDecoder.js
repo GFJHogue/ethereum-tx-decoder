@@ -11,12 +11,7 @@ module.exports = function FunctionDecoder(iface) {
 
   for (var fnName in iface.functions) {
     var fnInfo = iface.functions[fnName];
-
     functions[fnInfo.sighash] = fnName;
-
-    iface.functions[fnName].inputTypes =
-      fnInfo.signature.split('(', 2)[1].slice(0, -1).split(',')
-    ;
   };
 
   this.decodeFn = function(data) {
@@ -27,8 +22,8 @@ module.exports = function FunctionDecoder(iface) {
     var fnInfo = iface.functions[fnName];
 
     var result = defaultCoder.decode(
-      fnInfo.inputs,
-      fnInfo.inputTypes,
+      fnInfo.inputs.names,
+      fnInfo.inputs.types,
       raw_params
     );
 
