@@ -1,6 +1,6 @@
 {
   "name": "ethereum-tx-decoder",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Lightweight utility for decoding function parameters from Ethereum transactions.",
   "keywords": [
     "ethereum",
@@ -41,7 +41,7 @@
   "author": "Gregory F. J. Hogue",
   "license": "MIT",
   "dependencies": {
-    "ethers": "^3.0.15"
+    "ethers": "^4.0.37"
   },
   "devDependencies": {
     "mocha": "5.1.1"

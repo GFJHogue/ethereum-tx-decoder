@@ -139,8 +139,8 @@ function getValues(object, format) {
 }
 
 describe('ABI Coder Decoding', function() {
-    var coder = ethers.utils.AbiCoder.defaultCoder;
-    var Interface = ethers.Interface;
+    var coder = ethers.utils.defaultAbiCoder;
+    var Interface = ethers.utils.Interface;
     var FunctionDecoder = require('../src/FunctionDecoder.js');
 
     var tests = utils.loadTests('contract-interface');

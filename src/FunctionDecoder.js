@@ -1,11 +1,11 @@
-var {defaultCoder} = require('ethers/utils/abi-coder');
-var Interface = require('ethers/contracts/interface');
+var {defaultAbiCoder} = require('ethers/utils/abi-coder');
+var {Interface} = require('ethers/utils/interface');
 var decodeTx = require('./decodeTransaction.js');
 
 module.exports = function FunctionDecoder(iface) {
   if (!(this instanceof FunctionDecoder)) { throw new Error('missing new'); }
 
-  if (!(iface instanceof Interface)) { iface = new Interface(iface); }
+  if (!(Interface.isInterface(iface))) { iface = new Interface(iface); }
 
   var functions = {};
 
@@ -21,9 +21,8 @@ module.exports = function FunctionDecoder(iface) {
     var fnName = functions[sighash];
     var fnInfo = iface.functions[fnName];
 
-    var result = defaultCoder.decode(
-      fnInfo.inputs.names,
-      fnInfo.inputs.types,
+    var result = defaultAbiCoder.decode(
+      fnInfo.inputs,
       raw_params
     );
 

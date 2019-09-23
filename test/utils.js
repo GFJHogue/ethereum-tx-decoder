@@ -6,7 +6,7 @@ var path = require('path');
 var zlib = require('zlib');
 
 var bigNumber = require('ethers/utils/bignumber');
-var convert = require('ethers/utils/convert');
+var bytes = require('ethers/utils/bytes');
 var keccak256 = require('ethers/utils/keccak256');
 var utf8 = require('ethers/utils/utf8');
 
@@ -31,19 +31,19 @@ function randomBytes(seed, lower, upper) {
 
     seed = utf8.toUtf8Bytes(seed);
 
-    var result = convert.arrayify(keccak256(seed));
+    var result = bytes.arrayify(keccak256(seed));
     while (result.length < upper) {
-        result = convert.concat([result, keccak256(convert.concat([seed, result]))]);
+        result = bytes.concat([result, keccak256(bytes.concat([seed, result]))]);
     }
 
-    var top = convert.arrayify(keccak256(result));
+    var top = bytes.arrayify(keccak256(result));
     var percent = ((top[0] << 16) | (top[1] << 8) | top[2]) / 0x00ffffff;
 
     return result.slice(0, lower + parseInt((upper - lower) * percent));
 }
 
 function randomHexString(seed, lower, upper) {
-    return convert.hexlify(randomBytes(seed, lower, upper));
+    return bytes.hexlify(randomBytes(seed, lower, upper));
 }
 
 function randomNumber(seed, lower, upper) {
@@ -106,9 +106,9 @@ module.exports = {
     bigNumberify: bigNumber.bigNumberify,
 
     equals: equals,
-    isHexString: convert.isHexString,
-    hexlify: convert.hexlify,
-    arrayify: convert.arrayify,
+    isHexString: bytes.isHexString,
+    hexlify: bytes.hexlify,
+    arrayify: bytes.arrayify,
 
     loadTests: loadTests,
     saveTests: saveTests,
