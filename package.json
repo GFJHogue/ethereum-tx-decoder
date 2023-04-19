@@ -44,6 +44,6 @@
     "ethers": "^4.0.37"
   },
   "devDependencies": {
-    "mocha": "5.1.1"
+    "mocha": "10.2.0"
   }
 }
